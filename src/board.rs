@@ -1,6 +1,4 @@
-use std::fmt::Display;
-use std::fmt::Error;
-use std::fmt::Formatter;
+use std::fmt;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Stone {
@@ -39,8 +37,8 @@ impl<const N: usize> Board<N> {
     }
 }
 
-impl<const N: usize> Display for Board<N> {
-    fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
+impl<const N: usize> fmt::Display for Board<N> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         for row in &self.state {
             for cell in row {
                 match cell {
