@@ -4,7 +4,3 @@ pub enum RuleSet {
     Japanese,
     Custom,
 }
-
-pub struct Komi {
-    value: f64,
-}
