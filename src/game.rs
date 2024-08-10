@@ -2,12 +2,6 @@ use std::fmt;
 
 use crate::board::{Board, Stone};
 
-// placeholder for when I later implement handicap features
-pub enum Handicap {
-    Fixed,
-    Free,
-}
-
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub struct Player {
     name: &'static str,
@@ -24,7 +18,7 @@ impl Player {
 }
 
 impl fmt::Display for Player {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let color: &str = match self.color {
             Stone::Black => "black",
             Stone::White => "white",
